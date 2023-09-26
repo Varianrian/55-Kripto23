@@ -5,8 +5,6 @@
 # Tanggal	: 26 September 2023
 # Deskripsi	: Program enkripsi dan dekripsi menggunakan metode Hill Cipher
 
-
-
 import numpy as np
 
 def char_to_number(x):
