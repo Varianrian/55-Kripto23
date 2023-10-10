@@ -36,10 +36,7 @@ def input_text(string):
     return text
 
 def hill(method, text, key, n):    
-    key_det = int(np.linalg.det(key))
-    if key_det % 2 == 0 or key_det == 13 :
-        print("Determinan bukan ganjil selain 13. Key tidak ada karena invers tidak ada.")
-        return
+    key_det = np.linalg.det(key).astype(int)
     
     if(len(text) % n != 0) :
         last_char = text[-1]
@@ -113,11 +110,11 @@ while True :
         if(pilihan == '1'):
             print("\nPlaintext: " + text)
             output = hill("enkripsi", text, key, n)
-            print("Ciphertext: " + output)
+            print("Ciphertext: ", output)
         elif pilihan == '2':
             print("\nCiphertext: " + text)
             output = hill("dekripsi", text, key, n)
-            print("Plaintext: " + output)     
+            print("Plaintext: ", output)     
             
     elif pilihan == '3':
         print("\n")
